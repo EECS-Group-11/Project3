@@ -41,6 +41,10 @@ function downkey(e) {
                 for (const c of currentPiece.coords) {
                     board[c[0]][c[1]] = currentPiece.color;
                 }
+                if (currentPiece.coords.some(x => x[0] < 4)) {
+                    alert("Game Over!");
+                    document.removeEventListener("keydown", downkey);
+                }
                 //swap pieces
                 currentPiece = nextPiece;
                 nextPiece = getRandomPiece();
