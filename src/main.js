@@ -4,13 +4,24 @@ function main() {
     //some basic elements that will likely be in the game
 
     board = Array(24).fill(null).map(x => x = Array(10).fill("#ffffff"));
-    currentPiece =  getRandomPiece();
+    generateBoard();
+    currentPiece = getRandomPiece();
     nextPiece = getRandomPiece();
     heldPiece = null;
     score = 0;
 }
 
-//obviously will need to be refactored some, just some demo code
+function generateBoard() {
+    let board = document.querySelector('#board')
+    for (let i = 4; i < 24; i++) {
+        board.innerHTML += `<div id="row${i - 4}" class="row"></div>`
+        let curRow = board.querySelector(`#row${i - 4}`);
+        for (let j = 0; j < 10; j++) {
+            curRow.innerHTML += `<div id="r${i-4}c${j}" class="cell" style="background-color: rgb(255, 255, 255);"></div>`
+        }
+    }
+}
+
 function updateGraphics() {
     //put currentPiece on board
     for (const coord of currentPiece.coords) {
@@ -26,7 +37,6 @@ function updateGraphics() {
 
 function downkey(e) {
     if (e.key !== 'F5' && e.key !== 'F12') e.preventDefault();
-    //will need to add collision detection on movement functions
     if (e.key === 'ArrowDown') {
         let temp = currentPiece.coords.map(x => [x[0] + 1, x[1]]);
         //remove from board so it doesnt attempt to collide with itself
