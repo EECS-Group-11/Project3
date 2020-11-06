@@ -98,7 +98,10 @@ function downkey(e) {
         currentPiece.moveHor(1);
     }
     //swap held piece and currentPiece
-    if (e.key === 'z') {//swap heldPiece and currentPiece
+    if (e.key === 'z') {
+        for (const c of currentPiece.coords) {
+            board[c[0]][c[1]] = "#ffffff";
+        }
         if (heldPiece === null) {
             heldPiece = currentPiece;
             currentPiece = nextPiece;
@@ -109,7 +112,10 @@ function downkey(e) {
             heldPiece = currentPiece;
             currentPiece = temp;
         }
+        heldPiece.rotationIndex = 0;
+        heldPiece.coords = heldPiece.getOrigCoords();
     }
+    //rotate
     if (e.key === ' ') {
         let temp = clone(currentPiece);
         temp.rotate();

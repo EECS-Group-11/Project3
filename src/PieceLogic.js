@@ -39,6 +39,10 @@ class I extends Piece {
             [[-2,-1],[-1,0],[0,1],[1,2]],
             [[-1,2],[0,1],[1,0],[2,-1]]];
     }
+    getOrigCoords() {
+        let temp = new i();
+        return temp.coords;
+    }
 }
 
 class O extends Piece {
@@ -51,6 +55,10 @@ class O extends Piece {
             [[0,0],[0,0],[0,0],[0,0]],
             [[0,0],[0,0],[0,0],[0,0]],
             [[0,0],[0,0],[0,0],[0,0]]];
+    }
+    getOrigCoords() {
+        let temp = new O();
+        return temp.coords;
     }
 }
 
@@ -65,6 +73,10 @@ class L extends Piece {
             [[-1,-1],[0,0],[1,1],[0,2]],
             [[-1,1],[0,0],[1,-1],[2,0]]];
     }
+    getOrigCoords() {
+        let temp = new L();
+        return temp.coords;
+    }
 }
 
 class J extends Piece {
@@ -77,6 +89,10 @@ class J extends Piece {
             [[1,-1],[0,0],[-1,1],[0,-2]],
             [[-1,-1],[0,0],[1,1],[-2,0]],
             [[-1,1],[0,0],[1,-1],[0,2]]];
+    }
+    getOrigCoords() {
+        let temp = new J();
+        return temp.coords;
     }
 }
 
@@ -91,6 +107,10 @@ class T extends Piece {
             [[-1,-1],[0,0],[1,1],[-1,1]],
             [[-1,1],[0,0],[1,-1],[1,1]]];
     }
+    getOrigCoords() {
+        let temp = new T();
+        return temp.coords;
+    }
 }
 
 class S extends Piece {
@@ -104,6 +124,10 @@ class S extends Piece {
             [[-1,-1],[0,0],[-1,1],[0,2]],
             [[-1,1],[0,0],[1,1],[2,0]]];
     }
+    getOrigCoords() {
+        let temp = new S();
+        return temp.coords;
+    }
 }
 
 class Z extends Piece {
@@ -116,6 +140,10 @@ class Z extends Piece {
             [[0,-2],[-1,-1],[0,0],[-1,1]],
             [[-2,0],[-1,1],[0,0],[1,1]],
             [[0,2],[1,1],[0,0],[1,-1]]];
+    }
+    getOrigCoords() {
+        let temp = new Z();
+        return temp.coords;
     }
 }
 
