@@ -98,7 +98,7 @@ function downkey(e) {
     //maybe add a hard drop function too?
     updateGraphics();
 }
-
+//checks for completed rows
 function check10Row(){
     has10 = true;
     for(i = 4; i < 24; i++){
@@ -116,7 +116,7 @@ function check10Row(){
     }
     
 }
-
+//clears completed rows
 function clearRow(row){
     for(x = 0; x < 10; x++){
         board[row][x] =  "#ffffff";
@@ -124,7 +124,7 @@ function clearRow(row){
     shiftDown();
     check10Row()
 }
-
+//checks for space below floating pieces
 function checkForSpace(){
     for(i = 4; i < 24; i++){
         for(j = 0; j < 10; j++){
@@ -137,7 +137,7 @@ function checkForSpace(){
         }
     }
 }
-
+//shifts floating pieces down
 function shiftDown(){
     for(r = 4; r < 24; r++){
         for(c = 0; c < 10; c++){
