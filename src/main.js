@@ -7,6 +7,7 @@ function main() {
     currentPiece =  getRandomPiece();
     nextPiece = getRandomPiece();
     heldPiece = null;
+    score = 0;
 }
 
 //obviously will need to be refactored some, just some demo code
@@ -48,6 +49,7 @@ function downkey(e) {
                 //swap pieces
                 currentPiece = nextPiece;
                 nextPiece = getRandomPiece();
+                check10Row();
                 return;
             }
         } 
@@ -87,13 +89,114 @@ function downkey(e) {
     }
     //swap held piece and currentPiece
     if (e.key === 'z') {//swap heldPiece and currentPiece
-        let temp = heldPiece;
-        heldPiece = currentPiece;
-        currentPiece = temp;
+        if (heldPiece === null) {
+            heldPiece = currentPiece;
+            currentPiece = nextPiece;
+            nextPiece = getRandomPiece();
+        }
+        else {
+            let temp = heldPiece;
+            heldPiece = currentPiece;
+            currentPiece = temp;
+        }
     }
-    if (e.key === ' ') currentPiece.rotate();
+    if (e.key === ' ') {
+        let temp = clone(currentPiece);
+        temp.rotate();
+        for (const c of currentPiece.coords) {
+            board[c[0]][c[1]] = "#ffffff";
+        }
+        for (const c of temp.coords) {
+            if (c[1] < 0 || c[1] > 9 || c[0] > 19 || board[c[0]][c[1]] !== "#ffffff") {
+                for (const c of currentPiece.coords) {
+                    board[c[0]][c[1]] = currentPiece.color;
+                }
+                return;
+            }
+        }
+        currentPiece.rotate();
+    }
     //maybe add a hard drop function too?
     updateGraphics();
+}
+//checks for completed rows
+function check10Row(){
+    has10 = true;
+    for(let i = 4; i < 24; i++){
+        has10 = true;
+        for(let j = 0; j < 10; j++){
+            if (board[i][j] === "#ffffff"){
+                has10 = false;
+                break;
+            }
+        }
+        if(has10 == true){
+            clearRow(i);
+            score = score+100;
+        }
+    }
+    
+}
+//clears completed rows
+function clearRow(row){
+    for(let x = 0; x < 10; x++){
+        board[row][x] =  "#ffffff";
+    }
+    shiftDown();
+    check10Row()
+}
+//checks for space below floating pieces
+function checkForSpace(){
+    for(let i = 4; i < 24; i++){
+        for(let j = 0; j < 10; j++){
+            if (board[i][j] !== "#ffffff" && (i+1<24)){
+                if(board[i+1][j] === "#ffffff"){
+                    shiftDown();
+                }
+            }
+        }
+    }
+}
+//shifts floating pieces down
+function shiftDown(){
+    for(let r = 4; r < 24; r++){
+        for(let c = 0; c < 10; c++){
+            if (board[r][c] !== "#ffffff" && (r+1<24)){
+                if(board[r+1][c] === "#ffffff"){
+                    board[r+1][c] = board[r][c];
+                    board[r][c] = "#ffffff";
+                }
+            }
+        }
+    }
+    checkForSpace();
+}
+
+function copyPiece(piece) {
+  let copy;
+  if (piece instanceof I) copy = new I()
+  else if (piece instanceof O) copy = new O()
+  else if (piece instanceof L) copy = new L()
+  else if (piece instanceof J) copy = new J()
+  else if (piece instanceof T) copy = new T()
+  else if (piece instanceof S) copy = new S()
+  else copy = new Z()
+
+  for (const prop in piece) {
+    copy[prop] = clone(piece[prop])
+  }
+  return copy
+}
+
+function clone(obj) {
+    if (typeof(obj) !== 'object' || obj === null) return obj;
+    if (Array.isArray(obj)) return obj.map(x => x = clone(x));
+    if (obj instanceof Piece) return copyPiece(obj);
+    let copy;
+    for (const prop in obj) {
+      copy[prop] = clone(obj[prop])
+    }
+    return copy
 }
 
 document.addEventListener("DOMContentLoaded", main);
