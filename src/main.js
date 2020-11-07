@@ -20,6 +20,22 @@ function generateBoard() {
             curRow.innerHTML += `<div id="r${i-4}c${j}" class="cell" style="background-color: rgb(255, 255, 255);"></div>`
         }
     }
+    let next = document.querySelector('#next')
+    for (let i = 0; i < 4; i++) {
+        next.innerHTML += `<div id="nrow${i}" class="row"></div>`
+        let curRow = next.querySelector(`#nrow${i}`);
+        for (let j = 0; j < 4; j++) {
+            curRow.innerHTML += `<div id="nr${i}c${j}" class="cell" style="background-color: rgb(255, 255, 255);"></div>`
+        }
+    }
+    let held = document.querySelector('#held')
+    for (let i = 0; i < 4; i++) {
+        held.innerHTML += `<div id="hrow${i}" class="row"></div>`
+        let curRow = held.querySelector(`#hrow${i}`);
+        for (let j = 0; j < 4; j++) {
+            curRow.innerHTML += `<div id="hr${i}c${j}" class="cell" style="background-color: rgb(255, 255, 255);"></div>`
+        }
+    }
 }
 
 function updateGraphics() {
@@ -31,6 +47,19 @@ function updateGraphics() {
     for (let i = 4; i < 24; i++) {
         for (let j = 0; j < 10; j++) {
             document.querySelector('#r'+ (i-4) + 'c' + j).style.backgroundColor = board[i][j];
+        }
+    }
+    //draw next
+
+    //draw held
+    if (heldPiece !== null) {
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 4; j++) {
+                document.querySelector('#hr'+ i + 'c' + j).style.backgroundColor = "#ffffff"
+                if (heldPiece.coords.some(x => x[0] === i && x[1] - 3 === j)) {
+                    document.querySelector('#hr'+ i + 'c' + j).style.backgroundColor = heldPiece.color;
+                }
+            }
         }
     }
 }
@@ -112,7 +141,7 @@ function downkey(e) {
             heldPiece = currentPiece;
             currentPiece = temp;
         }
-        heldPiece.rotationIndex = 0;
+        while (heldPiece.rotationIndex !== 0) heldPiece.rotate();
         heldPiece.coords = heldPiece.getOrigCoords();
     }
     //rotate

@@ -3,23 +3,16 @@
     <head>
         <meta charset='utf-8' />
         <title>sirteT</title>
-        <link rel='stylesheet' type='css/text' href='' />
-        <style>
-            .cell {
-                width: 25px;
-                height: 25px;
-                border: 1px solid black;
-            }
-
-            .row {
-                display: flex;
-                justify-content: center;
-            }
-        </style>
+        <link rel='stylesheet' type='text/css' href='src/style.css' />
     </head>
     <body>
         <div id='board'></div>
-        <div id='extras'></div>
+        <div id='extras'>
+            <p>Next Piece:</p>
+            <div id='next'></div>
+            <p>Held Piece:</p>
+            <div id='held'></div>
+        </div>
         <script src='src/main.js'></script>
         <script src='src/PieceLogic.js'></script>
     </body>

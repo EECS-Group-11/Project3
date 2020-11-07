@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+#board {
+    background-color: rgb(48, 140, 163);
+    padding: 5px;
+}
+
+#extras {
+    background-color: rgb(48, 140, 163);
+    padding: 5px;
+    text-align: center;
+}
+
+#next {
+    padding: 10px;
+}
+
+#held {
+    padding: 10px;
+}
