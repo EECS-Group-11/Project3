@@ -5,6 +5,12 @@ end = false;
  * Calls all the tests
  */
 function test() {
+    clearTimeout(timeoutID)
+    clearTimeout(autoID)
+    time = 0;
+    wait = 1000
+    board = Array(24).fill(null).map(x => x = Array(10).fill("#ffffff"));
+    heldPiece = null;
     console.log("^^^ That error is because there are no graphics in the test suite, the error is useful because it prevents the game from starting on window load")
     console.log("getRandomPiece returns instance of Piece: ", test1())
     console.log("All origCoords functions work: ", test2())
@@ -12,6 +18,11 @@ function test() {
     console.log("moveHor(1) works for all piece types: ", test4())
     console.log("moveHor(-1) works for all piece types: ", test5())
     console.log("rotate() works for all piece types in all orientations: ", test6())
+    console.log("Display updates when piece moves down: ", test7());
+    console.log("Display updates when piece moves right: ", test8());
+    console.log("Display updates when piece moves left: ", test9());
+    console.log("Display updates when piece rotates: ", test10());
+    console.log("Nextpiece becomes currentpiece after bottom collision: ", test11())
 }
 
 /**
@@ -105,6 +116,58 @@ function test6() {
         }
     }
     return true;
+}
+
+/**
+ * Tests that display updates when piece moves down
+ * @returns true if it succeeds, false if it fails
+ */
+function test7() {
+    currentPiece = new I();
+    currentPiece.moveDown()
+    updateGraphics();
+    return !currentPiece.coords.some(x => board[x[0]][x[1]] !== currentPiece.color);
+}
+
+/**
+ * Tests that display updates when piece moves right
+ * @returns true if it succeeds, false if it fails
+ */
+function test8() {
+    currentPiece = new I();
+    currentPiece.moveHor(1)
+    updateGraphics();
+    return !currentPiece.coords.some(x => board[x[0]][x[1]] !== currentPiece.color);
+}
+
+/**
+ * Tests that display updates when piece moves left
+ * @returns true if it succeeds, false if it fails
+ */
+function test9() {
+    currentPiece = new I();
+    currentPiece.moveHor(-1)
+    updateGraphics();
+    return !currentPiece.coords.some(x => board[x[0]][x[1]] !== currentPiece.color);
+}
+
+/**
+ * Tests if display updates when piece rotates
+ * @returns true if it succeeds, false if it fails
+ */
+function test10() {
+    currentPiece = new I();
+    currentPiece.rotate()
+    updateGraphics();
+    return !currentPiece.coords.some(x => board[x[0]][x[1]] !== currentPiece.color);
+}
+
+function test11() {
+    temp = clone(nextPiece)
+    while (!downCollisionCheck()) {
+        currentPiece.moveDown()
+    }
+    return (currentPiece === temp)
 }
 
 /**

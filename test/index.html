@@ -3,9 +3,18 @@
     <head>
         <meta charset='utf-8' />
         <title>Test Suite</title>
+        <link rel='stylesheet' type='text/css' href='../src/style.css' />
     </head>
     <body>
-        <button onclick='test()'>PRESS TO TEST</button>
+        <button onclick='test()' style='margin: 20px; width: 70px; height: 500px; background-color: blueviolet; color: white;'>PRESS TO TEST</button>
+        <div id='board'></div>
+        <div id='extras'>
+            <p>Next Piece:</p>
+            <div id='next'></div>
+            <p>Held Piece:</p>
+            <div id='held'></div>
+            <p id='score'>Score: 0</p>
+        </div>
         <script src='test.js'></script>
         <script src='../src/main.js'></script>
         <script src='../src/collisionFuncs.js'></script>
