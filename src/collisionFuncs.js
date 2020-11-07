@@ -82,7 +82,7 @@ function rotateCollisionCheck() {
     }
     for (const c of temp.coords) {
         //if collision
-        if (c[1] < 0 || c[1] > 9 || c[0] > 19 || board[c[0]][c[1]] !== "#ffffff") {
+        if (c[1] < 0 || c[1] > 9 || c[0] > 23 || board[c[0]][c[1]] !== "#ffffff") {
             return true;
         }
     }

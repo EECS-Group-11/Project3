@@ -5,12 +5,7 @@ end = false;
  * Calls all the tests
  */
 function test() {
-    clearTimeout(timeoutID)
-    clearTimeout(autoID)
-    time = 0;
-    wait = 1000
-    board = Array(24).fill(null).map(x => x = Array(10).fill("#ffffff"));
-    heldPiece = null;
+    reset()
     console.log("^^^ That error is because there are no graphics in the test suite, the error is useful because it prevents the game from starting on window load")
     console.log("getRandomPiece returns instance of Piece: ", test1())
     console.log("All origCoords functions work: ", test2())
@@ -22,7 +17,14 @@ function test() {
     console.log("Display updates when piece moves right: ", test8());
     console.log("Display updates when piece moves left: ", test9());
     console.log("Display updates when piece rotates: ", test10());
-    console.log("Nextpiece becomes currentpiece after bottom collision: ", test11())
+    console.log("Nextpiece becomes currentpiece after bottom collision (wall): ", test11())
+    console.log("Piece doesn't move after left collision (wall): ", test12())
+    console.log("Piece doesn't move after right collision (wall): ", test13())
+    console.log("Piece doesn't rotate if collision would occur (wall): ", test14())
+    console.log("Nextpiece becomes currentpiece after bottom collision (piece): ", test15())
+    console.log("Piece doesn't move after left collision (piece): ", test16())
+    console.log("Piece doesn't move after right collision (piece): ", test17())
+    console.log("Piece doesn't rotate if collision would occur (piece): ", test18())
 }
 
 /**
@@ -162,12 +164,118 @@ function test10() {
     return !currentPiece.coords.some(x => board[x[0]][x[1]] !== currentPiece.color);
 }
 
+/**
+ * Tests if currentpiece becomes next piece after bottom collision (wall)
+ * @returns true if it succeeds, false if it fails
+ */
 function test11() {
-    temp = clone(nextPiece)
+    reset();
+    currentPiece = new I();
+    temp = copyPiece(nextPiece);
     while (!downCollisionCheck()) {
         currentPiece.moveDown()
     }
-    return (currentPiece === temp)
+    return (currentPiece.shape === temp.shape && currentPiece.coords.equals(temp.coords))
+}
+
+/**
+ * Tests if piece doesnt move after left collision (wall)
+ * @returns true if it succeeds, false if it fails
+ */
+function test12() {
+    reset();
+    currentPiece = new I();
+    let temp;
+    while (!leftCollisionCheck()) {
+        currentPiece.moveHor(-1)
+        temp = copyPiece(currentPiece)
+    }
+    return currentPiece.coords.equals(temp.coords)
+}
+
+/**
+ * Tests if piece doesnt move after right collision (wall)
+ * @returns true if it succeeds, false if it fails
+ */
+function test13() {
+    reset();
+    currentPiece = new I();
+    let temp;
+    while (!rightCollisionCheck()) {
+        currentPiece.moveHor(1)
+        temp = copyPiece(currentPiece)
+    }
+    return currentPiece.coords.equals(temp.coords)
+}
+
+/**
+ * Tests if piece doesnt rotate if collision would occur (wall)
+ * @returns true if it succeeds, false if it fails
+ */
+function test14() {
+    reset();
+    currentPiece = new I();
+    let temp;
+    while (!rightCollisionCheck()) {
+        currentPiece.moveHor(1)
+    }
+    temp = copyPiece(currentPiece)
+    return rotateCollisionCheck();
+}
+
+/**
+ * Tests if currentpiece becomes next piece after bottom collision (wall)
+ * @returns true if it succeeds, false if it fails
+ */
+function test15() {
+    reset();
+    currentPiece = new I();
+    temp = copyPiece(nextPiece);
+    //creating fake "piece" cells
+    board[23].fill("#333333")
+    while (!downCollisionCheck()) {
+        currentPiece.moveDown()
+    }
+    return (currentPiece.shape === temp.shape && currentPiece.coords.equals(temp.coords))
+}
+
+/**
+ * Tests if piece doesnt move after left collision (piece)
+ * @returns true if it succeeds, false if it fails
+ */
+function test16() {
+    reset();
+    currentPiece = new I()
+    tempPiece = new I()
+    tempPiece.moveHor(-1);
+    tempPiece.coords.forEach(x => board[x[0]][x[1]] = tempPiece.color)
+    return leftCollisionCheck();
+}
+
+/**
+ * Tests if piece doesnt move after right collision (piece)
+ * @returns true if it succeeds, false if it fails
+ */
+function test17() {
+    reset();
+    currentPiece = new I()
+    tempPiece = new I()
+    tempPiece.moveHor(1);
+    tempPiece.coords.forEach(x => board[x[0]][x[1]] = tempPiece.color)
+    return rightCollisionCheck();
+}
+
+/**
+ * Tests if piece doesnt rotate if collision would occur (piece)
+ * @returns true if it succeeds, false if it fails
+ */
+function test18() {
+    reset();
+    currentPiece = new I()
+    tempPiece = new I()
+    tempPiece.moveHor(1);
+    tempPiece.coords.forEach(x => board[x[0]][x[1]] = tempPiece.color)
+    return rotateCollisionCheck();
 }
 
 /**
@@ -184,3 +292,19 @@ Array.prototype.equals = function(array2) {
     }
     return true;
 }
+
+/**
+ * resets game
+ */
+function reset() {
+    clearTimeout(timeoutID)
+    clearTimeout(autoID)
+    time = 0;
+    wait = 1000
+    board = Array(24).fill(null).map(x => x = Array(10).fill("#ffffff"));
+    heldPiece = null;
+    currentPiece = getRandomPiece();
+    nextPiece = getRandomPiece();
+}
+
+document.addEventListener("DOMContentLoaded", reset);

@@ -3,6 +3,7 @@
  * Creates necessary game elements, starts the game
  */
 function main() {
+    end = false
     board = Array(24).fill(null).map(x => x = Array(10).fill("#ffffff"));
     generateBoard();
     currentPiece = getRandomPiece();
@@ -12,7 +13,6 @@ function main() {
     updateGraphics();
     timer();
     autoPlay();
-    end = false
 }
 
 /**
@@ -119,7 +119,7 @@ function timer() {
 function autoPlay() {
     autoID = setTimeout(autoPlay, wait)
     if (!downCollisionCheck()) currentPiece.moveDown();
-    updateGraphics()
+    if (!end) updateGraphics()
 }
 
 /**
