@@ -95,7 +95,7 @@ function autoPlay() {
 function gameOver() {
     end = true;
     let screen = document.querySelector('#extras')
-    screen.innerHTML = "<p>Game Over!</p><button onclick='window.location.reload()'>Play again?</button>"
+    screen.innerHTML = `<p>Game Over!</p><p>Score: ${score}</p><button onclick='window.location.reload()'>Play again?</button>`
 }
 
 function downkey(e) {
