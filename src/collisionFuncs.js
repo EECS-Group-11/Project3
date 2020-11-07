@@ -19,10 +19,7 @@ function downCollisionCheck() {
                 board[c[0]][c[1]] = currentPiece.color;
             }
             if (currentPiece.coords.some(x => x[0] < 4)) {
-                clearTimeout(autoID);
-                clearTimeout(timeoutID);
-                gameOver();
-                document.removeEventListener("keydown", downkey);
+                gameOver()
             }
             //reset swap limitation
             swapped = false;

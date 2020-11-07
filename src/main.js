@@ -112,7 +112,6 @@ function timer() {
     time += 1;
     timeoutID = setTimeout(timer, 1000);
     if (!(time % 10)) wait -= 10;
-    updateGraphics()
 }
 
 /**
@@ -121,6 +120,7 @@ function timer() {
 function autoPlay() {
     autoID = setTimeout(autoPlay, wait)
     if (!downCollisionCheck()) currentPiece.moveDown();
+    updateGraphics()
 }
 
 /**
@@ -128,6 +128,9 @@ function autoPlay() {
  */
 function gameOver() {
     end = true;
+    clearTimeout(autoID);
+    clearTimeout(timeoutID);
+    document.removeEventListener("keydown", downkey);
     let screen = document.querySelector('#extras')
     screen.innerHTML = `<p>Game Over!</p><p>Score: ${score}</p><button onclick='window.location.reload()'>Play again?</button>`
 }
