@@ -1,5 +1,9 @@
 
 class Piece {
+    /**
+     * Generic piece contructor
+     * @param {String} type
+     */
     constructor(type) {
         this.shape = type;
         //[row,col]
@@ -8,22 +12,32 @@ class Piece {
         this.rotationIncrements = []
     }
 
+    /**
+     * Moves piece down
+     */
     moveDown() {
         this.coords.forEach(x => x[0] += 1);
     }
 
+    /**
+     * Moves piece horizontally
+     * @param {Number} dir 
+     */
     moveHor(dir) {
         //-1 = left, 1 = right
         this.coords.forEach(x => x[1] += dir);
     }
 
+    /**
+     * Rotates piece by its current rotation pattern
+     */
     rotate() {
         //each piece has a different center of rotation uhoh, see image for reference
         //https://vignette.wikia.nocookie.net/tetrisconcept/images/3/3d/SRS-pieces.png/revision/latest?cb=20060626173148
         for (let c in this.coords) {
             this.coords[c][0] += this.rotationIncrements[this.rotationIndex][c][0]
             this.coords[c][1] += this.rotationIncrements[this.rotationIndex][c][1]
-          }
+        }
         this.rotationIndex = (this.rotationIndex + 1) % 4
     }
 }
@@ -39,6 +53,10 @@ class I extends Piece {
             [[-2,-1],[-1,0],[0,1],[1,2]],
             [[-1,2],[0,1],[1,0],[2,-1]]];
     }
+    /**
+     * Provides default coordinates for this shape
+     * @returns list of coordinates
+     */
     getOrigCoords() {
         let temp = new I();
         return temp.coords;
@@ -56,6 +74,10 @@ class O extends Piece {
             [[0,0],[0,0],[0,0],[0,0]],
             [[0,0],[0,0],[0,0],[0,0]]];
     }
+    /**
+     * Provides default coordinates for this shape
+     * @returns list of coordinates
+     */
     getOrigCoords() {
         let temp = new O();
         return temp.coords;
@@ -73,6 +95,10 @@ class L extends Piece {
             [[-1,-1],[0,0],[1,1],[0,2]],
             [[-1,1],[0,0],[1,-1],[2,0]]];
     }
+    /**
+     * Provides default coordinates for this shape
+     * @returns list of coordinates
+     */
     getOrigCoords() {
         let temp = new L();
         return temp.coords;
@@ -90,6 +116,10 @@ class J extends Piece {
             [[-1,-1],[0,0],[1,1],[-2,0]],
             [[-1,1],[0,0],[1,-1],[0,2]]];
     }
+    /**
+     * Provides default coordinates for this shape
+     * @returns list of coordinates
+     */
     getOrigCoords() {
         let temp = new J();
         return temp.coords;
@@ -107,6 +137,10 @@ class T extends Piece {
             [[-1,-1],[0,0],[1,1],[-1,1]],
             [[-1,1],[0,0],[1,-1],[1,1]]];
     }
+    /**
+     * Provides default coordinates for this shape
+     * @returns list of coordinates
+     */
     getOrigCoords() {
         let temp = new T();
         return temp.coords;
@@ -124,6 +158,10 @@ class S extends Piece {
             [[-1,-1],[0,0],[-1,1],[0,2]],
             [[-1,1],[0,0],[1,1],[2,0]]];
     }
+    /**
+     * Provides default coordinates for this shape
+     * @returns list of coordinates
+     */
     getOrigCoords() {
         let temp = new S();
         return temp.coords;
@@ -141,13 +179,20 @@ class Z extends Piece {
             [[-2,0],[-1,1],[0,0],[1,1]],
             [[0,2],[1,1],[0,0],[1,-1]]];
     }
+    /**
+     * Provides default coordinates for this shape
+     * @returns list of coordinates
+     */
     getOrigCoords() {
         let temp = new Z();
         return temp.coords;
     }
 }
 
-//returns object of a random type of piece
+/**
+ * Gets random piece type
+ * @returns instance of a random piece
+ */
 function getRandomPiece() {
     let types = [I,O,L,J,T,S,Z];
     return new types[Math.floor(Math.random() * types.length)]();
