@@ -6,6 +6,7 @@ function main() {
     end = false
     board = Array(24).fill(null).map(x => x = Array(10).fill("#ffffff"));
     generateBoard();
+    swapped = false;
     currentPiece = getRandomPiece();
     nextPiece = getRandomPiece();
     heldPiece = null;
@@ -149,7 +150,7 @@ function downkey(e) {
         if (!rightCollisionCheck()) currentPiece.moveHor(1);
     }
     //swap held piece and currentPiece
-    if (e.key === 'z') {
+    if (e.key === 'z' && swapped === false) {
         //remove current piece from board
         for (const c of currentPiece.coords) {
             board[c[0]][c[1]] = "#ffffff";
@@ -169,6 +170,7 @@ function downkey(e) {
         //reset new held piece to its natural state
         while (heldPiece.rotationIndex !== 0) heldPiece.rotate();
         heldPiece.coords = heldPiece.getOrigCoords();
+        swapped = true;
     }
     //rotate
     if (e.key === ' ') {

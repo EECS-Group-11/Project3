@@ -21,6 +21,8 @@ function downCollisionCheck() {
             if (currentPiece.coords.some(x => x[0] < 4)) {
                 gameOver()
             }
+            //reset swap limitation
+            swapped = false;
             //swap pieces
             currentPiece = nextPiece;
             nextPiece = getRandomPiece();
