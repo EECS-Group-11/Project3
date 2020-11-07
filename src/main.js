@@ -9,6 +9,10 @@ function main() {
     nextPiece = getRandomPiece();
     heldPiece = null;
     score = 0;
+    updateGraphics();
+    timer();
+    autoPlay();
+    end = false
 }
 
 function generateBoard() {
@@ -50,7 +54,14 @@ function updateGraphics() {
         }
     }
     //draw next
-
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
+            document.querySelector('#nr'+ i + 'c' + j).style.backgroundColor = "#ffffff"
+            if (nextPiece.coords.some(x => x[0] === i && x[1] - 3 === j)) {
+                document.querySelector('#nr'+ i + 'c' + j).style.backgroundColor = nextPiece.color;
+            }
+        }
+    }
     //draw held
     if (heldPiece !== null) {
         for (let i = 0; i < 4; i++) {
@@ -64,67 +75,39 @@ function updateGraphics() {
     }
 }
 
+time = 0;
+timeoutID = null
+autoID = null
+wait = 1000;
+
+function timer() {
+    time += 1;
+    timeoutID = setTimeout(timer, 1000);
+    if (!(time % 10)) wait -= 10;
+    updateGraphics()
+}
+
+function autoPlay() {
+    autoID = setTimeout(autoPlay, wait)
+    if (!downCollisionCheck()) currentPiece.moveDown();
+}
+
+function gameOver() {
+    end = true;
+    let screen = document.querySelector('#extras')
+    screen.innerHTML = "<p>Game Over!</p><button onclick='window.location.reload()'>Play again?</button>"
+}
+
 function downkey(e) {
     if (e.key !== 'F5' && e.key !== 'F12') e.preventDefault();
     if (e.key === 'ArrowDown') {
-        let temp = currentPiece.coords.map(x => [x[0] + 1, x[1]]);
-        //remove from board so it doesnt attempt to collide with itself
-        for (const c of currentPiece.coords) {
-            board[c[0]][c[1]] = "#ffffff";
-        }
-        for (const c of temp) {
-            //avoid drawing things that are above screen
-            if (c[0] < 0) continue;
-            //if collision
-            if (c[0] > 23 || board[c[0]][c[1]] !== "#ffffff") {
-                //redraw on board
-                for (const c of currentPiece.coords) {
-                    board[c[0]][c[1]] = currentPiece.color;
-                }
-                if (currentPiece.coords.some(x => x[0] < 4)) {
-                    alert("Game Over!");
-                    document.removeEventListener("keydown", downkey);
-                }
-                //swap pieces
-                currentPiece = nextPiece;
-                nextPiece = getRandomPiece();
-                check10Row();
-                return;
-            }
-        } 
-        currentPiece.moveDown();
+        if (!downCollisionCheck()) currentPiece.moveDown();
     }
     if (e.key === 'ArrowLeft') {
-        let temp = currentPiece.coords.map(x => [x[0], x[1] - 1]);
-        for (const c of currentPiece.coords) {
-            board[c[0]][c[1]] = "#ffffff";
-        }
-        for (const c of temp) {
-            if (c[0] < 0) continue;
-            if (c[1] < 0 || board[c[0]][c[1]] !== "#ffffff") {
-                for (const c of currentPiece.coords) {
-                    board[c[0]][c[1]] = currentPiece.color;
-                }
-                return;
-            }
-        }
-        currentPiece.moveHor(-1);
+        if (!leftCollisionCheck()) currentPiece.moveHor(-1);
     }
     if (e.key === 'ArrowRight') {
-        let temp = currentPiece.coords.map(x => [x[0], x[1] + 1]);
-        for (const c of currentPiece.coords) {
-            board[c[0]][c[1]] = "#ffffff";
-        }
-        for (const c of temp) {
-            if (c[0] < 0) continue;
-            if (c[1] > 9 || board[c[0]][c[1]] !== "#ffffff") {
-                for (const c of currentPiece.coords) {
-                    board[c[0]][c[1]] = currentPiece.color;
-                }
-                return;
-            }
-        }
-        currentPiece.moveHor(1);
+        if (!rightCollisionCheck()) currentPiece.moveHor(1);
     }
     //swap held piece and currentPiece
     if (e.key === 'z') {
@@ -162,7 +145,7 @@ function downkey(e) {
         currentPiece.rotate();
     }
     //maybe add a hard drop function too?
-    updateGraphics();
+    if (!end) updateGraphics();
 }
 //checks for completed rows
 function check10Row(){
@@ -178,6 +161,7 @@ function check10Row(){
         if(has10 == true){
             clearRow(i);
             score = score+100;
+            document.querySelector('#score').innerText = `Score: ${score}`
         }
     }
     
@@ -217,6 +201,7 @@ function shiftDown(){
     checkForSpace();
 }
 
+//creates deepcopy of a piece
 function copyPiece(piece) {
   let copy;
   if (piece instanceof I) copy = new I()
@@ -233,6 +218,7 @@ function copyPiece(piece) {
   return copy
 }
 
+//creates deepcopy of anything that doesnt have a superclass, and also pieces
 function clone(obj) {
     if (typeof(obj) !== 'object' || obj === null) return obj;
     if (Array.isArray(obj)) return obj.map(x => x = clone(x));

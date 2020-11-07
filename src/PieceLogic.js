@@ -40,7 +40,7 @@ class I extends Piece {
             [[-1,2],[0,1],[1,0],[2,-1]]];
     }
     getOrigCoords() {
-        let temp = new i();
+        let temp = new I();
         return temp.coords;
     }
 }
