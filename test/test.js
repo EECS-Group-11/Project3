@@ -9,6 +9,9 @@ function test() {
     console.log("getRandomPiece returns instance of Piece: ", test1())
     console.log("All origCoords functions work: ", test2())
     console.log("moveDown works for all piece types: ", test3())
+    console.log("moveHor(1) works for all piece types: ", test4())
+    console.log("moveHor(-1) works for all piece types: ", test5())
+    console.log("rotate() works for all piece types in all orientations: ", test6())
 }
 
 /**
@@ -47,13 +50,66 @@ function test3() {
         piece.moveDown();
         orig.forEach(x => x[0] += 1)
         if (!piece.coords.equals(orig)) return false;
-        return true;
     }
+    return true;
+}
+
+/**
+ * Tests that moveHor(1) works for all pieces
+ * @returns true if it succeeds, false if it fails
+ */
+function test4() {
+    let pieces = [I,O,L,J,T,S,Z]
+    for (const Shape of pieces) {
+        let piece = new Shape();
+        let orig = piece.getOrigCoords()
+        piece.moveHor(1);
+        orig.forEach(x => x[1] += 1)
+        if (!piece.coords.equals(orig)) return false;
+    }
+    return true;
+}
+
+/**
+ * Tests that moveHor(-1) works for all pieces
+ * @returns true if it succeeds, false if it fails
+ */
+function test5() {
+    let pieces = [I,O,L,J,T,S,Z]
+    for (const Shape of pieces) {
+        let piece = new Shape();
+        let orig = piece.getOrigCoords()
+        piece.moveHor(-1);
+        orig.forEach(x => x[1] -= 1)
+        if (!piece.coords.equals(orig)) return false;
+    }
+    return true;
+}
+
+/**
+ * Tests that rotate() works for all pieces in all orientations
+ * @returns true if it succeeds, false if it fails
+ */
+function test6() {
+    let pieces = [I,O,L,J,T,S,Z]
+    for (const Shape of pieces) {
+        let piece = new Shape();
+        let tester = copyPiece(piece);
+        for (let testRIndex = 0; testRIndex < 4; testRIndex++) {
+            piece.rotate()
+            for (let i = 0; i < tester.coords.length; i++) {
+                tester.coords[i][0] += tester.rotationIncrements[testRIndex][i][0];
+                tester.coords[i][1] += tester.rotationIncrements[testRIndex][i][1];
+            }
+            if (!piece.coords.equals(tester.coords)) return false;
+        }
+    }
+    return true;
 }
 
 /**
  * Compares arrays
- * @returns true is same, false otherwise
+ * @returns true if same, false otherwise
  */
 Array.prototype.equals = function(array2) {
     if (this.length !== array2.length) return false;
