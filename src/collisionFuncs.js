@@ -24,6 +24,8 @@ function downCollisionCheck() {
                 gameOver();
                 document.removeEventListener("keydown", downkey);
             }
+            //reset swap limitation
+            swapped = false;
             //swap pieces
             currentPiece = nextPiece;
             nextPiece = getRandomPiece();
