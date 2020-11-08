@@ -1,4 +1,4 @@
-# Project3
+# Tetris
 Tetris for project three of EECS 448 (Software Engineering I)
 ## Group 11
 | Team Member 	| Team Member  	| Team Member 	| Team Member 	| Team Member 	|
