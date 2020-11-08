@@ -186,7 +186,9 @@ function downkey(e) {
     //update graphics if game isnt over
     if (!end) updateGraphics();
 }
-//checks for completed rows
+/**
+ * Checks for completed rows
+ */
 function check10Row(){
     has10 = true;
     for(let i = 4; i < 24; i++){
@@ -199,13 +201,17 @@ function check10Row(){
         }
         if(has10 == true){
             clearRow(i);
+            // bigger score if multiple lines are cleared at once and when game speeds up
             score = score + (100 * (mult + ((1100 - wait) / 100)));
             mult++;
             document.querySelector('#score').innerText = `Score: ${score}`
         }
     }
 }
-//clears completed rows
+
+/**
+ * clears completed rows
+ */
 function clearRow(row){
     for(let x = 0; x < 10; x++){
         board[row][x] =  "#ffffff";
@@ -213,7 +219,10 @@ function clearRow(row){
     shiftDown();
     check10Row()
 }
-//checks for space below floating pieces
+
+/**
+ * checks for space below floating pieces
+ */
 function checkForSpace(){
     for(let i = 4; i < 24; i++){
         for(let j = 0; j < 10; j++){
@@ -225,7 +234,10 @@ function checkForSpace(){
         }
     }
 }
-//shifts floating pieces down
+
+/**
+ * shifts floating pieces down
+ */
 function shiftDown(){
     for(let r = 4; r < 24; r++){
         for(let c = 0; c < 10; c++){
@@ -240,7 +252,11 @@ function shiftDown(){
     checkForSpace();
 }
 
-//creates deepcopy of a piece
+/**
+ * creates deepcopy of a piece
+ * @param piece
+ * @returns {Z|I|L|T|S|J|*}
+ */
 function copyPiece(piece) {
   let copy;
   //create correct type of piece
@@ -259,7 +275,11 @@ function copyPiece(piece) {
   return copy
 }
 
-//creates deepcopy of anything that doesnt have a superclass, and also pieces
+/**
+ * creates deepcopy of anything that doesnt have a superclass, and also pieces
+ * @param obj
+ * @returns {Uint8Array|BigInt64Array|*[]|Float64Array|Int8Array|Float32Array|Int32Array|Uint32Array|Uint8ClampedArray|BigUint64Array|Int16Array|Uint16Array|Z|I|L|T|S|J|*}
+ */
 function clone(obj) {
     //if nonobject, return itself
     if (typeof(obj) !== 'object' || obj === null) return obj;
