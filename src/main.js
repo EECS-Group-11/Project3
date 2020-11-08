@@ -199,7 +199,7 @@ function check10Row(){
         }
         if(has10 == true){
             clearRow(i);
-            score = score + (100 * mult);
+            score = score + (100 * (mult + ((1100 - wait) / 100)));
             mult++;
             document.querySelector('#score').innerText = `Score: ${score}`
         }
