@@ -1,0 +1,5215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <title>  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' rel='stylesheet'>
+  <link href='assets/style.css' rel='stylesheet'>
+  <link href='assets/github.css' rel='stylesheet'>
+  <link href='assets/split.css' rel='stylesheet'>
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'></h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            spellcheck='false'
+            autocapitalize='off'
+            autocorrect='off'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#_applyremainingdefaultoptions'
+                  class="">
+                  _applyRemainingDefaultOptions
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#istouchdevice'
+                  class="">
+                  isTouchDevice
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#add'
+                  class="">
+                  add
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#remove'
+                  class="">
+                  remove
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#removeall'
+                  class="">
+                  removeAll
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#urlify'
+                  class="">
+                  urlify
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#hasanchorjslink'
+                  class="">
+                  hasAnchorJSLink
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#_getelements'
+                  class="">
+                  _getElements
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#_addbaselinestyles'
+                  class="">
+                  _addBaselineStyles
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#downcollisioncheck'
+                  class="">
+                  downCollisionCheck
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#leftcollisioncheck'
+                  class="">
+                  leftCollisionCheck
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#rightcollisioncheck'
+                  class="">
+                  rightCollisionCheck
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#main'
+                  class="">
+                  main
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#generateboard'
+                  class="">
+                  generateBoard
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#updategraphics'
+                  class="">
+                  updateGraphics
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#timer'
+                  class="">
+                  timer
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#autoplay'
+                  class="">
+                  autoPlay
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#gameover'
+                  class="">
+                  gameOver
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#downkey'
+                  class="">
+                  downkey
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#check10row'
+                  class="">
+                  check10Row
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#clearrow'
+                  class="">
+                  clearRow
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#checkforspace'
+                  class="">
+                  checkForSpace
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#shiftdown'
+                  class="">
+                  shiftDown
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#copypiece'
+                  class="">
+                  copyPiece
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#clone'
+                  class="">
+                  clone
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#constructor'
+                  class="">
+                  constructor
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#movedown'
+                  class="">
+                  moveDown
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#movehor'
+                  class="">
+                  moveHor
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#rotate'
+                  class="">
+                  rotate
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#equals'
+                  class="">
+                  equals
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#i'
+                  class=" toggle-sibling">
+                  I
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#igetorigcoords'
+                        class='regular pre-open'>
+                        #getOrigCoords
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#o'
+                  class=" toggle-sibling">
+                  O
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#ogetorigcoords'
+                        class='regular pre-open'>
+                        #getOrigCoords
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#l'
+                  class=" toggle-sibling">
+                  L
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#lgetorigcoords'
+                        class='regular pre-open'>
+                        #getOrigCoords
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#j'
+                  class=" toggle-sibling">
+                  J
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#jgetorigcoords'
+                        class='regular pre-open'>
+                        #getOrigCoords
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#t'
+                  class=" toggle-sibling">
+                  T
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#tgetorigcoords'
+                        class='regular pre-open'>
+                        #getOrigCoords
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#s'
+                  class=" toggle-sibling">
+                  S
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#sgetorigcoords'
+                        class='regular pre-open'>
+                        #getOrigCoords
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#z'
+                  class=" toggle-sibling">
+                  Z
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#zgetorigcoords'
+                        class='regular pre-open'>
+                        #getOrigCoords
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getrandompiece'
+                  class="">
+                  getRandomPiece
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test'
+                  class="">
+                  test
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test1'
+                  class="">
+                  test1
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test2'
+                  class="">
+                  test2
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test3'
+                  class="">
+                  test3
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test4'
+                  class="">
+                  test4
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test5'
+                  class="">
+                  test5
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test6'
+                  class="">
+                  test6
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test7'
+                  class="">
+                  test7
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test8'
+                  class="">
+                  test8
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test9'
+                  class="">
+                  test9
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test10'
+                  class="">
+                  test10
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test11'
+                  class="">
+                  test11
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test12'
+                  class="">
+                  test12
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test13'
+                  class="">
+                  test13
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test14'
+                  class="">
+                  test14
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test15'
+                  class="">
+                  test15
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test16'
+                  class="">
+                  test16
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test17'
+                  class="">
+                  test17
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test18'
+                  class="">
+                  test18
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test19'
+                  class="">
+                  test19
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test20'
+                  class="">
+                  test20
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test21'
+                  class="">
+                  test21
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test22'
+                  class="">
+                  test22
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test23'
+                  class="">
+                  test23
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test24'
+                  class="">
+                  test24
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test25'
+                  class="">
+                  test25
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#test26'
+                  class="">
+                  test26
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#equals'
+                  class="">
+                  equals
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#reset'
+                  class="">
+                  reset
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='_applyremainingdefaultoptions'>
+      _applyRemainingDefaultOptions
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Assigns options to the internal options object, and provides defaults.</p>
+
+    <div class='pre p1 fill-light mt0'>_applyRemainingDefaultOptions(opts: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    Options object
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='istouchdevice'>
+      isTouchDevice
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks to see if this device supports touch. Uses criteria pulled from Modernizr:
+<a href="https://github.com/Modernizr/Modernizr/blob/da22eb27631fc4957f67607fe6042e85c0a84656/feature-detects/touchevents.js#L40">https://github.com/Modernizr/Modernizr/blob/da22eb27631fc4957f67607fe6042e85c0a84656/feature-detects/touchevents.js#L40</a></p>
+
+    <div class='pre p1 fill-light mt0'>isTouchDevice(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>:
+        true if the current device supports touch.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='add'>
+      add
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Add anchor links to page elements.</p>
+
+    <div class='pre p1 fill-light mt0'>add(selector: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/docs/Web/API/NodeList">Nodelist</a>)): this</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>selector</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/docs/Web/API/NodeList">Nodelist</a>))</code>
+	    A CSS selector for targeting the elements you wish to add anchor links
+to. Also accepts an array or nodeList containing the relavant elements.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>this</code>:
+        The AnchorJS object
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='remove'>
+      remove
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Removes all anchorjs-links from elements targed by the selector.</p>
+
+    <div class='pre p1 fill-light mt0'>remove(selector: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/docs/Web/API/NodeList">Nodelist</a>)): this</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>selector</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/docs/Web/API/NodeList">Nodelist</a>))</code>
+	    A CSS selector string targeting elements with anchor links,
+OR a nodeList / array containing the DOM elements.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>this</code>:
+        The AnchorJS object
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='removeall'>
+      removeAll
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Removes all anchorjs links. Mostly used for tests.</p>
+
+    <div class='pre p1 fill-light mt0'>removeAll()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='urlify'>
+      urlify
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Urlify - Refine text so it makes a good ID.</p>
+<p>To do this, we remove apostrophes, replace nonsafe characters with hyphens,
+remove extra hyphens, truncate, trim hyphens, and make lowercase.</p>
+
+    <div class='pre p1 fill-light mt0'>urlify(text: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>text</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    Any text. Usually pulled from the webpage element we are linking to.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+        hyphen-delimited text for use in IDs and URLs.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='hasanchorjslink'>
+      hasAnchorJSLink
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Determines if this element already has an AnchorJS link on it.
+Uses this technique: <a href="http://stackoverflow.com/a/5898748/1154642">http://stackoverflow.com/a/5898748/1154642</a></p>
+
+    <div class='pre p1 fill-light mt0'>hasAnchorJSLink(el: HTMLElemnt): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>el</span> <code class='quiet'>(HTMLElemnt)</code>
+	    a DOM node
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>:
+        true/false
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='_getelements'>
+      _getElements
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Turns a selector, nodeList, or array of elements into an array of elements (so we can use array methods).
+It also throws errors on any other inputs. Used to handle inputs to .add and .remove.</p>
+
+    <div class='pre p1 fill-light mt0'>_getElements(input: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/docs/Web/API/NodeList">Nodelist</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/docs/Web/API/NodeList">Nodelist</a>))</code>
+	    A CSS selector string targeting elements with anchor links,
+OR a nodeList / array containing the DOM elements.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        An array containing the elements we want.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='_addbaselinestyles'>
+      _addBaselineStyles
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>_addBaselineStyles
+Adds baseline styles to the page, used by all AnchorJS links irregardless of configuration.</p>
+
+    <div class='pre p1 fill-light mt0'>_addBaselineStyles()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='downcollisioncheck'>
+      downCollisionCheck
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks if there was a collision before moving down,
+and if there was, switch player control to the next piece</p>
+
+    <div class='pre p1 fill-light mt0'>downCollisionCheck(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        whether there was a collision
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='leftcollisioncheck'>
+      leftCollisionCheck
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks if there was a collision before moving left</p>
+
+    <div class='pre p1 fill-light mt0'>leftCollisionCheck(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        whether there was a collision
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='rightcollisioncheck'>
+      rightCollisionCheck
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks if there was a collision before moving right</p>
+
+    <div class='pre p1 fill-light mt0'>rightCollisionCheck(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        whether there was a collision
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='main'>
+      main
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Creates necessary game elements, starts the game</p>
+
+    <div class='pre p1 fill-light mt0'>main()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='generateboard'>
+      generateBoard
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Generates the HTML for the entire display</p>
+
+    <div class='pre p1 fill-light mt0'>generateBoard()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='updategraphics'>
+      updateGraphics
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Redraws all 3 boards with updated data</p>
+
+    <div class='pre p1 fill-light mt0'>updateGraphics()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='timer'>
+      timer
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Counts seconds, decreases autoplay wait every 10 seconds</p>
+
+    <div class='pre p1 fill-light mt0'>timer()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='autoplay'>
+      autoPlay
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Auto moves the current piece down after every wait period</p>
+
+    <div class='pre p1 fill-light mt0'>autoPlay()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='gameover'>
+      gameOver
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Replaces next and held displays with end of game graphic</p>
+
+    <div class='pre p1 fill-light mt0'>gameOver()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='downkey'>
+      downkey
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Calls functions based on player input</p>
+
+    <div class='pre p1 fill-light mt0'>downkey(e: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>e</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='check10row'>
+      check10Row
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks for completed rows</p>
+
+    <div class='pre p1 fill-light mt0'>check10Row()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='clearrow'>
+      clearRow
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>clears completed rows</p>
+
+    <div class='pre p1 fill-light mt0'>clearRow(row: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>row</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='checkforspace'>
+      checkForSpace
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>checks for space below floating pieces</p>
+
+    <div class='pre p1 fill-light mt0'>checkForSpace()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='shiftdown'>
+      shiftDown
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>shifts floating pieces down</p>
+
+    <div class='pre p1 fill-light mt0'>shiftDown()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='copypiece'>
+      copyPiece
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>creates deepcopy of a piece</p>
+
+    <div class='pre p1 fill-light mt0'>copyPiece(piece: any): (<a href="#z">Z</a> | <a href="#i">I</a> | <a href="#l">L</a> | <a href="#t">T</a> | <a href="#s">S</a> | <a href="#j">J</a> | any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>piece</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="#z">Z</a> | <a href="#i">I</a> | <a href="#l">L</a> | <a href="#t">T</a> | <a href="#s">S</a> | <a href="#j">J</a> | any)</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='clone'>
+      clone
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>creates deepcopy of anything that doesnt have a superclass, and also pieces</p>
+
+    <div class='pre p1 fill-light mt0'>clone(obj: any): (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a> | BigInt64Array | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Float64Array">Float64Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Int8Array">Int8Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Int32Array">Int32Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array">Uint32Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray">Uint8ClampedArray</a> | BigUint64Array | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Int16Array">Int16Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array">Uint16Array</a> | <a href="#z">Z</a> | <a href="#i">I</a> | <a href="#l">L</a> | <a href="#t">T</a> | <a href="#s">S</a> | <a href="#j">J</a> | any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>obj</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a> | BigInt64Array | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Float64Array">Float64Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Int8Array">Int8Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Int32Array">Int32Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array">Uint32Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray">Uint8ClampedArray</a> | BigUint64Array | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Int16Array">Int16Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array">Uint16Array</a> | <a href="#z">Z</a> | <a href="#i">I</a> | <a href="#l">L</a> | <a href="#t">T</a> | <a href="#s">S</a> | <a href="#j">J</a> | any)</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='constructor'>
+      constructor
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Generic piece contructor</p>
+
+    <div class='pre p1 fill-light mt0'>constructor(type: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='movedown'>
+      moveDown
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Moves piece down</p>
+
+    <div class='pre p1 fill-light mt0'>moveDown()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='movehor'>
+      moveHor
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Moves piece horizontally</p>
+
+    <div class='pre p1 fill-light mt0'>moveHor(dir: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>dir</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='rotate'>
+      rotate
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Rotates piece by its current rotation pattern</p>
+
+    <div class='pre p1 fill-light mt0'>rotate()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='equals'>
+      equals
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Compares 2 pieces</p>
+
+    <div class='pre p1 fill-light mt0'>equals(piece: any): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>piece</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if same, false otherwise
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='i'>
+      I
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>I piece:
+*
+*
+*
+*</p>
+
+    <div class='pre p1 fill-light mt0'>new I()</div>
+  
+  
+    <p>
+      Extends
+      
+        Piece
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='igetorigcoords'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getOrigCoords()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Provides default coordinates for this shape</p>
+
+    <div class='pre p1 fill-light mt0'>getOrigCoords(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        list of coordinates
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='o'>
+      O
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>O piece:
+**
+**</p>
+
+    <div class='pre p1 fill-light mt0'>new O()</div>
+  
+  
+    <p>
+      Extends
+      
+        Piece
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='ogetorigcoords'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getOrigCoords()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Provides default coordinates for this shape</p>
+
+    <div class='pre p1 fill-light mt0'>getOrigCoords(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        list of coordinates
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='l'>
+      L
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>L piece:
+*</p>
+<hr>
+
+    <div class='pre p1 fill-light mt0'>new L()</div>
+  
+  
+    <p>
+      Extends
+      
+        Piece
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='lgetorigcoords'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getOrigCoords()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Provides default coordinates for this shape</p>
+
+    <div class='pre p1 fill-light mt0'>getOrigCoords(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        list of coordinates
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='j'>
+      J
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>J piece:
+*</p>
+<hr>
+
+    <div class='pre p1 fill-light mt0'>new J()</div>
+  
+  
+    <p>
+      Extends
+      
+        Piece
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='jgetorigcoords'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getOrigCoords()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Provides default coordinates for this shape</p>
+
+    <div class='pre p1 fill-light mt0'>getOrigCoords(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        list of coordinates
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='t'>
+      T
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>T piece:
+*</p>
+<hr>
+
+    <div class='pre p1 fill-light mt0'>new T()</div>
+  
+  
+    <p>
+      Extends
+      
+        Piece
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='tgetorigcoords'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getOrigCoords()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Provides default coordinates for this shape</p>
+
+    <div class='pre p1 fill-light mt0'>getOrigCoords(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        list of coordinates
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='s'>
+      S
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>S piece:
+**
+**</p>
+
+    <div class='pre p1 fill-light mt0'>new S()</div>
+  
+  
+    <p>
+      Extends
+      
+        Piece
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='sgetorigcoords'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getOrigCoords()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Provides default coordinates for this shape</p>
+
+    <div class='pre p1 fill-light mt0'>getOrigCoords(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        list of coordinates
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='z'>
+      Z
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Z piece:
+**
+**</p>
+
+    <div class='pre p1 fill-light mt0'>new Z()</div>
+  
+  
+    <p>
+      Extends
+      
+        Piece
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='zgetorigcoords'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getOrigCoords()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Provides default coordinates for this shape</p>
+
+    <div class='pre p1 fill-light mt0'>getOrigCoords(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        list of coordinates
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getrandompiece'>
+      getRandomPiece
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Gets random piece type</p>
+
+    <div class='pre p1 fill-light mt0'>getRandomPiece(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        instance of a random piece
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test'>
+      test
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Calls all the tests</p>
+
+    <div class='pre p1 fill-light mt0'>test()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test1'>
+      test1
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if getRandomPiece returns a piece object
+since function functions with rng, may need to run multiple times</p>
+
+    <div class='pre p1 fill-light mt0'>test1(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test2'>
+      test2
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if all orig coords functions return correct coordinates</p>
+
+    <div class='pre p1 fill-light mt0'>test2(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test3'>
+      test3
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests that moveDown works for all pieces</p>
+
+    <div class='pre p1 fill-light mt0'>test3(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test4'>
+      test4
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests that moveHor(1) works for all pieces</p>
+
+    <div class='pre p1 fill-light mt0'>test4(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test5'>
+      test5
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests that moveHor(-1) works for all pieces</p>
+
+    <div class='pre p1 fill-light mt0'>test5(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test6'>
+      test6
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests that rotate() works for all pieces in all orientations</p>
+
+    <div class='pre p1 fill-light mt0'>test6(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test7'>
+      test7
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests that display updates when piece moves down</p>
+
+    <div class='pre p1 fill-light mt0'>test7(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test8'>
+      test8
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests that display updates when piece moves right</p>
+
+    <div class='pre p1 fill-light mt0'>test8(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test9'>
+      test9
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests that display updates when piece moves left</p>
+
+    <div class='pre p1 fill-light mt0'>test9(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test10'>
+      test10
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if display updates when piece rotates</p>
+
+    <div class='pre p1 fill-light mt0'>test10(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test11'>
+      test11
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if currentpiece becomes next piece after bottom collision (wall)</p>
+
+    <div class='pre p1 fill-light mt0'>test11(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test12'>
+      test12
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if piece doesnt move after left collision (wall)</p>
+
+    <div class='pre p1 fill-light mt0'>test12(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test13'>
+      test13
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if piece doesnt move after right collision (wall)</p>
+
+    <div class='pre p1 fill-light mt0'>test13(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test14'>
+      test14
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if piece doesnt rotate if collision would occur (wall)</p>
+
+    <div class='pre p1 fill-light mt0'>test14(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test15'>
+      test15
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if currentpiece becomes next piece after bottom collision (wall)</p>
+
+    <div class='pre p1 fill-light mt0'>test15(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test16'>
+      test16
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if piece doesnt move after left collision (piece)</p>
+
+    <div class='pre p1 fill-light mt0'>test16(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test17'>
+      test17
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if piece doesnt move after right collision (piece)</p>
+
+    <div class='pre p1 fill-light mt0'>test17(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test18'>
+      test18
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if piece doesnt rotate if collision would occur (piece)</p>
+
+    <div class='pre p1 fill-light mt0'>test18(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test19'>
+      test19
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if held piece works properly when held piece is null</p>
+
+    <div class='pre p1 fill-light mt0'>test19(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test20'>
+      test20
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if held piece works properly when held piece is not null</p>
+
+    <div class='pre p1 fill-light mt0'>test20(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test21'>
+      test21
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if held piece swap is prevented once it has happened</p>
+
+    <div class='pre p1 fill-light mt0'>test21(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test22'>
+      test22
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if held piece swap is allowed after bottom collision</p>
+
+    <div class='pre p1 fill-light mt0'>test22(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test23'>
+      test23
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if check10Row does nothing when no rows are complete</p>
+
+    <div class='pre p1 fill-light mt0'>test23(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test24'>
+      test24
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tests if check10Row removes a complete line</p>
+
+    <div class='pre p1 fill-light mt0'>test24(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test25'>
+      test25
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks if check10Row does not remove not complete rows</p>
+
+    <div class='pre p1 fill-light mt0'>test25(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='test26'>
+      test26
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks if check10Row removes all complete rows</p>
+
+    <div class='pre p1 fill-light mt0'>test26(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if it succeeds, false if it fails
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='equals'>
+      equals
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Compares arrays</p>
+
+    <div class='pre p1 fill-light mt0'>equals(array2: any): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>array2</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        true if same, false otherwise
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='reset'>
+      reset
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>resets game</p>
+
+    <div class='pre p1 fill-light mt0'>reset()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
