@@ -11,6 +11,7 @@ function main() {
     nextPiece = getRandomPiece();
     heldPiece = null;
     score = 0;
+    mult = 1;
     updateGraphics();
     timer();
     autoPlay();
@@ -119,8 +120,11 @@ function timer() {
  */
 function autoPlay() {
     autoID = setTimeout(autoPlay, wait)
-    if (!downCollisionCheck()) currentPiece.moveDown();
-    if (!end) updateGraphics()
+    if (!downCollisionCheck()) {
+        currentPiece.moveDown();
+        mult = 1;
+    }
+    if (!end) updateGraphics();
 }
 
 /**
@@ -141,7 +145,10 @@ function gameOver() {
 function downkey(e) {
     if (e.key !== 'F5' && e.key !== 'F12') e.preventDefault();
     if (e.key === 'ArrowDown') {
-        if (!downCollisionCheck()) currentPiece.moveDown();
+        if (!downCollisionCheck()) {
+            currentPiece.moveDown();
+            mult = 1;
+        }
     }
     if (e.key === 'ArrowLeft') {
         if (!leftCollisionCheck()) currentPiece.moveHor(-1);
@@ -192,7 +199,8 @@ function check10Row(){
         }
         if(has10 == true){
             clearRow(i);
-            score = score+100;
+            score = score + (100 * mult);
+            mult++;
             document.querySelector('#score').innerText = `Score: ${score}`
         }
     }
