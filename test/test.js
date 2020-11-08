@@ -6,7 +6,6 @@ end = false;
  */
 function test() {
     reset()
-    console.log("^^^ That error is because there are no graphics in the test suite, the error is useful because it prevents the game from starting on window load")
     console.log("getRandomPiece returns instance of Piece: ", test1())
     console.log("All origCoords functions work: ", test2())
     console.log("moveDown works for all piece types: ", test3())
@@ -25,6 +24,14 @@ function test() {
     console.log("Piece doesn't move after left collision (piece): ", test16())
     console.log("Piece doesn't move after right collision (piece): ", test17())
     console.log("Piece doesn't rotate if collision would occur (piece): ", test18())
+    console.log("Held piece swap functions properly when heldPiece is null: ", test19())
+    console.log("Held piece swap functions properly when heldPiece is not null: ", test20())
+    console.log("Held piece swap prevented after using it once: ", test21())
+    console.log("Held piece swap allowed again after bottom collision: ", test22())
+    console.log("check10Row does nothing when no rows are complete: ", test23())
+    console.log("check10Row removes 1 line when 1 line is complete: ", test24())
+    console.log("check10Row does not remove noncomplete rows: ",test25())
+    console.log("check10Row removes all complete rows: ",test26())
 }
 
 /**
@@ -185,7 +192,7 @@ function test11() {
 function test12() {
     reset();
     currentPiece = new I();
-    let temp;
+    let temp = copyPiece(currentPiece);
     while (!leftCollisionCheck()) {
         currentPiece.moveHor(-1)
         temp = copyPiece(currentPiece)
@@ -200,7 +207,7 @@ function test12() {
 function test13() {
     reset();
     currentPiece = new I();
-    let temp;
+    let temp = copyPiece(currentPiece);
     while (!rightCollisionCheck()) {
         currentPiece.moveHor(1)
         temp = copyPiece(currentPiece)
@@ -236,7 +243,7 @@ function test15() {
     while (!downCollisionCheck()) {
         currentPiece.moveDown()
     }
-    return (currentPiece.shape === temp.shape && currentPiece.coords.equals(temp.coords))
+    return (currentPiece.equals(temp))
 }
 
 /**
@@ -279,6 +286,116 @@ function test18() {
 }
 
 /**
+ * Tests if held piece works properly when held piece is null
+ * @returns true if it succeeds, false if it fails
+ */
+function test19() {
+    reset();
+    let origNext = copyPiece(nextPiece)
+    let origCurr = copyPiece(currentPiece)
+    //this is called a pro gamer move, where I create a fake keydown event
+    e = {key: 'z', preventDefault: function() {}}
+    downkey(e)
+    return heldPiece.equals(origCurr) && currentPiece.equals(origNext)
+}
+
+/**
+ * Tests if held piece works properly when held piece is not null
+ * @returns true if it succeeds, false if it fails
+ */
+function test20() {
+    reset();
+    let origCurr = copyPiece(currentPiece)
+    heldPiece = getRandomPiece()
+    let origHeld = copyPiece(heldPiece)
+    e = {key: 'z', preventDefault: function() {}}
+    downkey(e)
+    return heldPiece.equals(origCurr) && currentPiece.equals(origHeld)
+}
+
+/**
+ * Tests if held piece swap is prevented once it has happened
+ * @returns true if it succeeds, false if it fails
+ */
+function test21() {
+    reset();
+    e = {key: 'z', preventDefault: function() {}}
+    downkey(e)
+    let swapCurr = copyPiece(currentPiece)
+    let swapHeld = copyPiece(heldPiece)
+    downkey(e)
+    return currentPiece.equals(swapCurr) && heldPiece.equals(swapHeld);
+}
+
+/**
+ * Tests if held piece swap is allowed after bottom collision
+ * @returns true if it succeeds, false if it fails
+ */
+function test22() {
+    reset();
+    e = {key: 'z', preventDefault: function() {}}
+    downkey(e)
+    let firstSwapHeld = copyPiece(heldPiece)
+    while (!downCollisionCheck()) currentPiece.moveDown()
+    let pre2ndSwapCurr = copyPiece(currentPiece)
+    downkey(e)
+    return currentPiece.equals(firstSwapHeld) && heldPiece.equals(pre2ndSwapCurr);
+}
+
+/**
+ * Tests if check10Row does nothing when no rows are complete
+ * @returns true if it succeeds, false if it fails
+ */
+function test23() {
+    reset();
+    check10Row();
+    return score === 0;
+}
+
+/**
+ * Tests if check10Row removes a complete line
+ * @returns true if it succeeds, false if it fails
+ */
+function test24() {
+    reset();
+    board[23].fill("#696969")
+    check10Row();
+    return score === 100;
+}
+
+/**
+ * Checks if check10Row does not remove not complete rows
+ * @returns true if it succeeds, false if it fails
+ */
+function test25() {
+    reset()
+    for (let i = 4; i < 24; i++) {
+        board[i][Math.floor(Math.random() * 10)] = "#069420"
+    }
+    check10Row();
+    return score === 0
+}
+
+/**
+ * Checks if check10Row removes all complete rows
+ * @returns true if it succeeds, false if it fails
+ */
+function test26() {
+    for (let i = 0; i < 100; i++) {
+        reset();
+        let num = Math.floor(Math.random() * 20);
+        for (let j = 0; j < num; j++) {
+            let row = Math.floor(Math.random() * 20) + 4
+            while (!board[row].includes("#ffffff")) row = Math.floor(Math.random() * 20) + 4
+            board[row].fill("#420420")
+        }
+        check10Row();
+        if (board.some(x => !x.includes("#ffffff"))) return false
+    }
+    return true
+}
+
+/**
  * Compares arrays
  * @returns true if same, false otherwise
  */
@@ -294,6 +411,14 @@ Array.prototype.equals = function(array2) {
 }
 
 /**
+ * Compares 2 pieces
+ * @returns true if same, false otherwise
+ */
+Piece.prototype.equals = function(piece) {
+    return this.shape === piece.shape && this.coords.equals(piece.coords)
+}
+
+/**
  * resets game
  */
 function reset() {
@@ -303,8 +428,11 @@ function reset() {
     wait = 1000
     board = Array(24).fill(null).map(x => x = Array(10).fill("#ffffff"));
     heldPiece = null;
+    swapped = false;
+    score = 0
     currentPiece = getRandomPiece();
     nextPiece = getRandomPiece();
+    updateGraphics()
 }
 
 document.addEventListener("DOMContentLoaded", reset);

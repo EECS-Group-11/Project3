@@ -196,7 +196,6 @@ function check10Row(){
             document.querySelector('#score').innerText = `Score: ${score}`
         }
     }
-    
 }
 //clears completed rows
 function clearRow(row){
